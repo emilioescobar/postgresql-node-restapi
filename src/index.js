@@ -1,12 +1,15 @@
-import express from 'express'
-import useRoutes from "./routes/users.routes.js"
-const app = express()
+import express from 'express';
+import useRoutes from './routes/users.routes.js';
+import morgan from 'morgan';
+
+const app = express();
+
+app.use(morgan('dev'));
 app.use(express.json());
-app.use(useRoutes)
-app.listen(3000)
+app.use(useRoutes);
+app.listen(3000);
 
-console.log("Server listen in port", 3000);
-
+console.log('Server listen in port', 3000);
 
 // docker pull postgres
 // descarga la imagen de docker
@@ -17,8 +20,7 @@ console.log("Server listen in port", 3000);
 // d9aeb1f41bdaf2e345e439bbf30db466faca1770898c2476993099bcd9c80ce7
 // has que genera al correrlo
 
-
-// docker stop <nombre del contenedor>  
+// docker stop <nombre del contenedor>
 // detien contenedor
 
 // docker rm <nombre del contenedor>
@@ -29,7 +31,5 @@ console.log("Server listen in port", 3000);
 
 // psql -U <usuario> --db <nombre-base-datos> --pasword
 // este comando pide conactarse a la base de datos en segundo plano y pide password
-
-
 
 // https://youtu.be/hVrKX2RtigQ?si=HQmSXWH2_x9IsdT0&t=1247

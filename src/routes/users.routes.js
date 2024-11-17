@@ -23,8 +23,7 @@ router.get('/users/:id', async (req, res) => {
     if (rows.length === 0) {
       return res.status(404).json({ message: 'Usuario no encontrado' });
     }
-    console.log(rows); // Imprimir el registro encontrado
-    res.json(rows); // Enviar el registro como respuesta
+    res.json(rows[0]); // Enviar el registro como respuesta
   } catch (error) {
     console.error('Error ejecutando la consulta', err);
     res

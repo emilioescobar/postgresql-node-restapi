@@ -1,24 +1,17 @@
-import pg from 'pg'
+import pg from 'pg';
 
 // Configuración de la conexión a la base de datos
 const pool = new pg.Pool({
-  user: 'emilio',       // Usuario de PostgreSQL
-  host: 'localhost',        // Host de la base de datos
+  user: 'emilio', // Usuario de PostgreSQL
+  host: 'localhost', // Host de la base de datos
   database: 'my_db', // Nombre de la base de datos
   password: 'raspberrypi', // Contraseña del usuario
-  port: 5432               // Puerto de PostgreSQL (por defecto es 5432)
+  port: 5432 // Puerto de PostgreSQL (por defecto es 5432)
 });
 
 // Exportar el pool de conexiones para usarlo en otros archivos
 export const query = (text, params) => pool.query(text, params);
 export { pool };
-
-// CREATE TABLE usuarios (
-//   Id SERIAL PRIMARY KEY,
-//   Nombre VARCHAR(100) NOT NULL,
-//   Domicilio VARCHAR()
-// )
-
 
 // CREATE TABLE datos_personales (
 //   id SERIAL PRIMARY KEY,
@@ -35,29 +28,27 @@ export { pool };
 //   fecha_creacion TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 // );
 
-
-
 // INSERT INTO datos_personales (
-//   nombre, 
-//   fecha_nac, 
-//   domicilio, 
-//   religion, 
-//   ocupacion, 
-//   genero, 
-//   estado_civil, 
-//   telefono, 
-//   escolaridad, 
+//   nombre,
+//   fecha_nac,
+//   domicilio,
+//   religion,
+//   ocupacion,
+//   genero,
+//   estado_civil,
+//   telefono,
+//   escolaridad,
 //   padre_tutor
-// ) 
+// )
 // VALUES (
-//   'Juan Pérez', 
-//   '1990-05-15', 
-//   'Calle Falsa 123, Ciudad Ejemplo', 
-//   'Católica', 
-//   'Ingeniero', 
-//   'Masculino', 
-//   'Soltero', 
-//   '1234567890', 
-//   'Licenciatura', 
+//   'Juan Pérez',
+//   '1990-05-15',
+//   'Calle Falsa 123, Ciudad Ejemplo',
+//   'Católica',
+//   'Ingeniero',
+//   'Masculino',
+//   'Soltero',
+//   '1234567890',
+//   'Licenciatura',
 //   'José Pérez'
 // );
